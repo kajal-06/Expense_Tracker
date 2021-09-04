@@ -1,0 +1,159 @@
+:root {
+  --box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.47),
+  -1px -1px 3px 0px rgba(0,0,0,0.47); 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e0e1dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Archivo', sans-serif;
+}
+
+.container {
+  margin: 30px auto;
+  width: 450px;
+}
+
+.title,
+#balance {
+  text-align: center;
+  margin-top: -10px;
+  letter-spacing: 5px;
+}
+
+h1 {
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin: 10px 0 10px;
+}
+
+/* income expense container */
+.income_expense_container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.income_expense_container, .income, .expense {
+  flex: 1;
+  text-align: center;
+}
+
+.income_expense_container .income {
+  border-right: 1px solid #333333;
+}
+
+.income_plus,
+.expense_minus {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.income .income_plus {
+  color: darkgreen;
+}
+
+.expense .expense_minus {
+  color: darkred;
+}
+
+/* form styling */
+form label {
+  display: inline-block;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+input[type="text"], input[type="number"] {
+  border: 2px solid #333333;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+form .transaction_btn {
+  background-color: #333333;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--box-shadow);
+}
+
+/* dom list styling */
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.list li {
+  background-color: #e0e1dd;
+  color: #333333;
+  font-weight: bold;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 10px 0;
+  box-shadow: var(--box-shadow);
+}
+
+.list li.plus {
+  border-right: 5px solid green;
+}
+
+.list li.minus {
+  border-right: 5px solid red;
+}
+
+/* button styling */
+.delete_btn {
+  cursor: pointer;
+  background-color: darkred;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%,-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete_btn {
+  opacity: 1;
+}
+
+@media (max-width:450px) {
+  .container {
+    width: 300px;
+  }
+}
